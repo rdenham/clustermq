@@ -27,6 +27,7 @@ SSH = R6::R6Class("SSH",
 
             # wait for ssh to connect
             message(sprintf("Connecting to %s via SSH ...", sQuote(ssh_host)))
+            browser()
             system(ssh_cmd, wait=TRUE, ignore.stdout=TRUE, ignore.stderr=TRUE)
 
             master$add_pending_workers(n_jobs)
